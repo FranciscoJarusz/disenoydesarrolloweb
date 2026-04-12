@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 15px 50px;
+}
+
+#logo {
+  justify-self: start;
+}
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li,
+#menu a {
+  list-style: none;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.circulo {
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  border-radius: 50%;
+  justify-self: end;
+}
+
+#hero {
+  height: 180px;
+  margin-top: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero h1 {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+main {
+  padding: 0 50px;
+}
+
+#peliculas {
+  margin-top: 30px;
+}
+
+#peliculas h2 {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 40px 0;
+}
+
+.fila-peliculas {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+
+.pelicula {
+  border-radius: 10px;
+  width: 280px;
+  height: 400px;
+  border: 3px solid black;
+}
+
+footer {
+  height: 150px;
+  margin-top: 40px;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
