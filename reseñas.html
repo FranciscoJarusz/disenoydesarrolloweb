@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reseñas.css" />
+    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>MoviePage - Películas, series y reseñas</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="/public/logo.png" height="40px;" class="logo" />
+      <nav>
+        <ul id="menu">
+          <li>
+            <a href="/index.html">INICIO</a>
+          </li>
+          <li>
+            <a href="/paginapeliculas.html">PELÍCULAS</a>
+          </li>
+          <li>
+            <a href="/paginaseries.html">SERIES</a>
+          </li>
+          <li>
+            <a href="/reseñas.html">RESEÑAS</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="circulo">
+        <img src="/public/account.svg" alt="" height="25px" />
+      </div>
+    </header>
+    <main>
+      <div class="hero">
+        <h1>Reseñas</h1>
+        <p>Compartí y lee reseñas de tus películas y series favoritas.</p>
+      </div>
+
+      <form action="" class="form-reseñas">
+        <div class="form-group">
+          <select name="titulo" id="titulo" required>
+            <option value="">Selecciona una película o serie</option>
+            <option value="pelicula1">Zootopia 2</option>
+            <option value="pelicula2">Kingsman</option>
+            <option value="serie1">Ecos de un Crímen</option>
+            <option value="serie2">Nueve Reinas</option>
+          </select>
+        </div>
+
+        <label for="reseña">Tu reseña:</label>
+        <div class="form-reseña">
+          <textarea
+            id="reseña"
+            name="reseña"
+            rows="5"
+            placeholder="Escribe tu reseña aquí..."
+          ></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div class="reseña-publicada">
+        <img src="public/peliculasRecienAgregados/zootopia2.webp" alt="" />
+        <div>
+          <h2>Zootopia 2</h2>
+          <span class="usuario">@usuario</span>
+          <p>
+            ¡Una secuela que supera las expectativas! Zootopia 2 nos sumerge
+            nuevamente en el vibrante mundo de animales antropomórficos, con una
+            historia intrigante y personajes aún más carismáticos. La animación
+            es impresionante, y la trama aborda temas relevantes de manera
+            inteligente. Sin duda, una película que encantará tanto a niños como
+            a adultos.
+          </p>
+        </div>
+      </div>
+      <div class="reseña-publicada">
+        <img src="public/peliculasRecienAgregados/zootopia2.webp" alt="" />
+        <div>
+          <h2>Zootopia 2</h2>
+          <span class="usuario">@usuario</span>
+          <p>
+            ¡Una secuela que supera las expectativas! Zootopia 2 nos sumerge
+            nuevamente en el vibrante mundo de animales antropomórficos, con una
+            historia intrigante y personajes aún más carismáticos. La animación
+            es impresionante, y la trama aborda temas relevantes de manera
+            inteligente. Sin duda, una película que encantará tanto a niños como
+            a adultos.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <img src="/public/logo.png" height="40px;" class="logo" />
+      <hr />
+      <p>&copy; 2026 MoviePage. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
