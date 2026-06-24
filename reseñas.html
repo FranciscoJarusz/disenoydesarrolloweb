@@ -33,9 +33,9 @@
         </ul>
       </nav>
 
-      <div class="circulo">
+      <a class="circulo" href="/cuenta.html">
         <img src="/public/account.svg" alt="" height="25px" />
-      </div>
+      </a>
     </header>
     <main>
       <div class="hero">
@@ -45,56 +45,70 @@
 
       <form action="" class="form-reseñas">
         <div class="form-group">
-          <select name="titulo" id="titulo" required>
-            <option value="">Selecciona una película o serie</option>
-            <option value="pelicula1">Zootopia 2</option>
-            <option value="pelicula2">Kingsman</option>
-            <option value="serie1">Ecos de un Crímen</option>
-            <option value="serie2">Nueve Reinas</option>
-          </select>
+          <label for="usuario">Tu nombre de usuario:</label>
+          <input
+            name="usuario"
+            id="usuario"
+            placeholder="Escribe tu nombre de usuario ..."
+            required
+          />
         </div>
 
-        <label for="reseña">Tu reseña:</label>
-        <div class="form-reseña">
-          <textarea
-            id="reseña"
-            name="reseña"
-            rows="5"
-            placeholder="Escribe tu reseña aquí..."
-          ></textarea>
+        <div class="form-group">
+          <label for="titulo">Titulo de la peícula:</label>
+          <input
+            name="titulo"
+            id="titulo"
+            placeholder="Escribe el nombre de la película o serie  ..."
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="reseña">Tu reseña:</label>
+          <div class="form-reseña">
+            <textarea
+              id="reseña"
+              name="reseña"
+              rows="5"
+              placeholder="Escribe tu reseña aquí..."
+            ></textarea>
+          </div>
         </div>
 
         <button type="submit">Enviar</button>
       </form>
 
-      <div class="reseña-publicada">
-        <img src="public/peliculasRecienAgregados/zootopia2.webp" alt="" />
-        <div>
-          <h2>Zootopia 2</h2>
-          <span class="usuario">@usuario</span>
-          <p>
-            ¡Una secuela que supera las expectativas! Zootopia 2 nos sumerge
-            nuevamente en el vibrante mundo de animales antropomórficos, con una
-            historia intrigante y personajes aún más carismáticos. La animación
-            es impresionante, y la trama aborda temas relevantes de manera
-            inteligente. Sin duda, una película que encantará tanto a niños como
-            a adultos.
-          </p>
+      <div id="contenedor-reseñas">
+        <div class="reseña-publicada">
+          <img src="public/peliculasRecienAgregados/zootopia2.webp" alt="" />
+          <div>
+            <h2>Zootopia 2</h2>
+            <span class="usuario">@usuario</span>
+            <p>
+              ¡Una secuela que supera las expectativas! Zootopia 2 nos sumerge
+              nuevamente en el vibrante mundo de animales antropomórficos, con
+              una historia intrigante y personajes aún más carismáticos. La
+              animación es impresionante, y la trama aborda temas relevantes de
+              manera inteligente. Sin duda, una película que encantará tanto a
+              niños como a adultos.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="reseña-publicada">
-        <img src="public/peliculasRecienAgregados/zootopia2.webp" alt="" />
-        <div>
-          <h2>Zootopia 2</h2>
-          <span class="usuario">@usuario</span>
-          <p>
-            ¡Una secuela que supera las expectativas! Zootopia 2 nos sumerge
-            nuevamente en el vibrante mundo de animales antropomórficos, con una
-            historia intrigante y personajes aún más carismáticos. La animación
-            es impresionante, y la trama aborda temas relevantes de manera
-            inteligente. Sin duda, una película que encantará tanto a niños como
-            a adultos.
-          </p>
+        <div class="reseña-publicada">
+          <img src="public/peliculasRecienAgregados/zootopia2.webp" alt="" />
+          <div>
+            <h2>Zootopia 2</h2>
+            <span class="usuario">@usuario</span>
+            <p>
+              ¡Una secuela que supera las expectativas! Zootopia 2 nos sumerge
+              nuevamente en el vibrante mundo de animales antropomórficos, con
+              una historia intrigante y personajes aún más carismáticos. La
+              animación es impresionante, y la trama aborda temas relevantes de
+              manera inteligente. Sin duda, una película que encantará tanto a
+              niños como a adultos.
+            </p>
+          </div>
         </div>
       </div>
     </main>
@@ -105,3 +119,5 @@
     </footer>
   </body>
 </html>
+
+<script src="js/reseña.js"></script>
