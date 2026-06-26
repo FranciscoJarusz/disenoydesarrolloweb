@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="paginapeliculas.css" />
-    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link rel="stylesheet" href="./paginapeliculas.css" />
+    <link rel="icon" type="image/png" href="./public/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -15,27 +15,27 @@
 
   <body>
     <header>
-      <img src="/public/logo.png" height="40px;" class="logo" />
+      <img src="./public/logo.png" height="40px;" class="logo" />
 
       <nav>
         <ul id="menu">
           <li>
-            <a href="/index.html">INICIO</a>
+            <a href="./index.html">INICIO</a>
           </li>
           <li>
-            <a href="/paginapeliculas.html">PELÍCULAS</a>
+            <a href="./paginapeliculas.html">PELÍCULAS</a>
           </li>
           <li>
-            <a href="/paginaseries.html">SERIES</a>
+            <a href="./paginaseries.html">SERIES</a>
           </li>
           <li>
-            <a href="/reseñas.html">RESEÑAS</a>
+            <a href="./reseñas.html">RESEÑAS</a>
           </li>
         </ul>
       </nav>
 
-      <a class="circulo" href="/cuenta.html">
-        <img src="/public/account.svg" alt="" height="25px" />
+      <a class="circulo" href="./cuenta.html">
+        <img src="./public/account.svg" alt="" height="25px" />
       </a>
     </header>
 
@@ -44,169 +44,125 @@
         <h1>Películas</h1>
       </div>
       <section id="peliculas">
-        <h2>Recién Agregadas</h2>
+        <div id="filtros">
+          <button id="btn-todos" class="filtro-btn activo" onclick="filtrar('todos')">Todos</button>
+          <button id="btn-recien" class="filtro-btn" onclick="filtrar('recien')">Recién Agregadas</button>
+          <button id="btn-crimen" class="filtro-btn" onclick="filtrar('crimen')">Crimen</button>
+          <button id="btn-comedia" class="filtro-btn" onclick="filtrar('comedia')">Comedia</button>
+          <button id="btn-accion" class="filtro-btn" onclick="filtrar('accion')">Acción</button>
+        </div>
 
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/lordofwar.jpg"
-              alt="Lord of War"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/matrix.jpg"
-              alt="Matrix"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/outlander.webp"
-              alt="Outlander"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/elresplandor.jpg"
-              alt="El Resplandor"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/zootopia2.webp"
-              alt="Zootopia 2"
-              class="pelicula"
-            />
+        <div id="recien" class="seccion">
+          <h2>Recién Agregadas</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasRecienAgregados/lordofwar.jpg" alt="Lord of War" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasRecienAgregados/matrix.jpg" alt="Matrix" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasRecienAgregados/outlander.webp" alt="Outlander" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasRecienAgregados/elresplandor.jpg" alt="El Resplandor" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasRecienAgregados/zootopia2.webp" alt="Zootopia 2" class="pelicula" />
+            </div>
           </div>
         </div>
 
-        <h2>Crimen</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/crimenperfecto.webp"
-              alt="Crimen Perfecto"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/ecosdeuncrimen.jpg"
-              alt="Ecos de un Crimen"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/lapruebadelcrimen.jpg"
-              alt="La Prueba del Crimen"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/nuevereinas.webp"
-              alt="Nueve Reinas"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/rutadeescape.webp"
-              alt="Ruta de Escape"
-              class="pelicula"
-            />
+        <div id="crimen" class="seccion">
+          <h2>Crimen</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasCrimen/crimenperfecto.webp" alt="Crimen Perfecto" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasCrimen/ecosdeuncrimen.jpg" alt="Ecos de un Crimen" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasCrimen/lapruebadelcrimen.jpg" alt="La Prueba del Crimen" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasCrimen/nuevereinas.webp" alt="Nueve Reinas" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasCrimen/rutadeescape.webp" alt="Ruta de Escape" class="pelicula" />
+            </div>
           </div>
         </div>
 
-        <h2>Comedia</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasComedia/lamascara.jpg"
-              alt="La Máscara"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasComedia/padrenohaymasqueuno.jpg"
-              alt="Padre No Hay Más Que Uno"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasComedia/quepasoayer.jpg"
-              alt="Qué Pasó Ayer"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasComedia/somoslosmiller.jpg"
-              alt="Somos los Miller"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasComedia/soncomoniños.jpg"
-              alt="Son Como Niños"
-              class="pelicula"
-            />
+        <div id="comedia" class="seccion">
+          <h2>Comedia</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasComedia/lamascara.jpg" alt="La Máscara" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasComedia/padrenohaymasqueuno.jpg" alt="Padre No Hay Más Que Uno" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasComedia/quepasoayer.jpg" alt="Qué Pasó Ayer" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasComedia/somoslosmiller.jpg" alt="Somos los Miller" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasComedia/soncomoniños.jpg" alt="Son Como Niños" class="pelicula" />
+            </div>
           </div>
         </div>
 
-        <h2>Acción</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/kingsman.webp"
-              alt="Kingsman"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/durodematar4.0.webp"
-              alt="Duro de Matar 4.0"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/busquedaimplacable3.webp"
-              alt="Búsqueda Implacable 3"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/gonein60seconds.webp"
-              alt="Gone in 60 Seconds"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/eltransportador.webp"
-              alt="El Transportador"
-              class="pelicula"
-            />
+        <div id="accion" class="seccion">
+          <h2>Acción</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasAccion/kingsman.webp" alt="Kingsman" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasAccion/durodematar4.0.webp" alt="Duro de Matar 4.0" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasAccion/busquedaimplacable3.webp" alt="Búsqueda Implacable 3" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasAccion/gonein60seconds.webp" alt="Gone in 60 Seconds" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/peliculasAccion/eltransportador.webp" alt="El Transportador" class="pelicula" />
+            </div>
           </div>
         </div>
       </section>
     </main>
+    <script>
+      function filtrar(id) {
+        document.getElementById('recien').style.display = 'none';
+        document.getElementById('crimen').style.display = 'none';
+        document.getElementById('comedia').style.display = 'none';
+        document.getElementById('accion').style.display = 'none';
+
+        if (id === 'todos') {
+          document.getElementById('recien').style.display = 'block';
+          document.getElementById('crimen').style.display = 'block';
+          document.getElementById('comedia').style.display = 'block';
+          document.getElementById('accion').style.display = 'block';
+        } else {
+          document.getElementById(id).style.display = 'block';
+        }
+
+        document.getElementById('btn-todos').classList.remove('activo');
+        document.getElementById('btn-recien').classList.remove('activo');
+        document.getElementById('btn-crimen').classList.remove('activo');
+        document.getElementById('btn-comedia').classList.remove('activo');
+        document.getElementById('btn-accion').classList.remove('activo');
+        document.getElementById('btn-' + id).classList.add('activo');
+      }
+    </script>
     <footer>
-      <img src="/public/logo.png" height="40px;" class="logo" />
+      <img src="./public/logo.png" height="40px;" class="logo" />
       <hr />
       <p>&copy; 2026 MoviePage. Todos los derechos reservados.</p>
     </footer>

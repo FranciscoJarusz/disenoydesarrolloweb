@@ -1,74 +1,70 @@
 const peliculas = [
   {
     titulo: "Lord of War",
-    imagen: "/public/peliculasRecienAgregados/lordofwar.jpg",
+    imagen: "./public/peliculasRecienAgregados/lordofwar.jpg",
   },
-  { titulo: "Matrix", imagen: "/public/peliculasRecienAgregados/matrix.jpg" },
+  { titulo: "Matrix", imagen: "./public/peliculasRecienAgregados/matrix.jpg" },
   {
     titulo: "Outlander",
-    imagen: "/public/peliculasRecienAgregados/outlander.webp",
+    imagen: "./public/peliculasRecienAgregados/outlander.webp",
   },
   {
     titulo: "El Resplandor",
-    imagen: "/public/peliculasRecienAgregados/elresplandor.jpg",
+    imagen: "./public/peliculasRecienAgregados/elresplandor.jpg",
   },
   {
     titulo: "Zootopia 2",
-    imagen: "/public/peliculasRecienAgregados/zootopia2.webp",
+    imagen: "./public/peliculasRecienAgregados/zootopia2.webp",
   },
   {
     titulo: "Crimen Perfecto",
-    imagen: "/public/peliculasCrimen/crimenperfecto.webp",
+    imagen: "./public/peliculasCrimen/crimenperfecto.webp",
   },
   {
     titulo: "Ecos de un Crimen",
-    imagen: "/public/peliculasCrimen/ecosdeuncrimen.jpg",
+    imagen: "./public/peliculasCrimen/ecosdeuncrimen.jpg",
   },
   {
     titulo: "La Prueba del Crimen",
-    imagen: "/public/peliculasCrimen/lapruebadelcrimen.jpg",
+    imagen: "./public/peliculasCrimen/lapruebadelcrimen.jpg",
   },
   {
     titulo: "Nueve Reinas",
-    imagen: "/public/peliculasCrimen/nuevereinas.webp",
+    imagen: "./public/peliculasCrimen/nuevereinas.webp",
   },
   {
     titulo: "Ruta de Escape",
-    imagen: "/public/peliculasCrimen/rutadeescape.webp",
+    imagen: "./public/peliculasCrimen/rutadeescape.webp",
   },
-  { titulo: "La Máscara", imagen: "/public/peliculasComedia/lamascara.jpg" },
+  { titulo: "La Máscara", imagen: "./public/peliculasComedia/lamascara.jpg" },
   {
     titulo: "Padre No Hay Más Que Uno",
-    imagen: "/public/peliculasComedia/padrenohaymasqueuno.jpg",
+    imagen: "./public/peliculasComedia/padrenohaymasqueuno.jpg",
   },
   {
     titulo: "Qué Pasó Ayer",
-    imagen: "/public/peliculasComedia/quepasoayer.jpg",
+    imagen: "./public/peliculasComedia/quepasoayer.jpg",
   },
   {
     titulo: "Somos los Miller",
-    imagen: "/public/peliculasComedia/somoslosmiller.jpg",
+    imagen: "./public/peliculasComedia/somoslosmiller.jpg",
   },
   {
     titulo: "Son Como Niños",
-    imagen: "/public/peliculasComedia/soncomoniños.jpg",
+    imagen: "./public/peliculasComedia/soncomoniños.jpg",
   },
-  { titulo: "Kingsman", imagen: "/public/peliculasAccion/kingsman.webp" },
+  { titulo: "Kingsman", imagen: "./public/peliculasAccion/kingsman.webp" },
   {
     titulo: "Duro de Matar 4.0",
-    imagen: "/public/peliculasAccion/durodematar4.0.webp",
+    imagen: "./public/peliculasAccion/durodematar4.0.webp",
   },
   {
     titulo: "Búsqueda Implacable 3",
-    imagen: "/public/peliculasAccion/busquedaimplacable3.webp",
-  },
-  {
-    titulo: "Gone in 60 Seconds",
-    imagen: "/public/peliculasAccion/gonein60seconds.webp",
+    imagen: "./public/peliculasAccion/busquedaimplacable3.webp",
   },
   {
     titulo: "El Transportador",
-    imagen: "/public/peliculasAccion/eltransportador.webp",
+    imagen: "./public/peliculasAccion/eltransportador.webp",
   },
 ];
 

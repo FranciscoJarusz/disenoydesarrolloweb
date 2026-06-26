@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="global.css" />
-    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="icon" type="image/png" href="./public/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -15,162 +15,194 @@
 
   <body>
     <header>
-      <img src="/public/logo.png" height="40px;" class="logo" />
+      <img src="./public/logo.png" height="40px;" class="logo" />
       <nav>
         <ul id="menu">
           <li>
-            <a href="/index.html">INICIO</a>
+            <a href="./index.html">INICIO</a>
           </li>
           <li>
-            <a href="/paginapeliculas.html">PELÍCULAS</a>
+            <a href="./paginapeliculas.html">PELÍCULAS</a>
           </li>
           <li>
-            <a href="/paginaseries.html">SERIES</a>
+            <a href="./paginaseries.html">SERIES</a>
           </li>
           <li>
-            <a href="/reseñas.html">RESEÑAS</a>
+            <a href="./reseñas.html">RESEÑAS</a>
           </li>
         </ul>
       </nav>
 
-      <a class="circulo" href="/cuenta.html">
-        <img src="/public/account.svg" alt="" height="25px" />
+      <a class="circulo" href="./cuenta.html">
+        <img src="./public/account.svg" alt="" height="25px" />
       </a>
     </header>
     <section id="hero">
       <img
-        src="/public/zootopia2hero.webp"
+        src="./public/zootopia2hero.webp"
         alt="Logo Zootopia 2"
         class="zootopiaLogo"
       />
       <div class="bg-hero"></div>
-      <img src="/public/hero.webp" alt="Hero Image" class="hero-image" />
+      <img src="./public/hero.webp" alt="Hero Image" class="hero-image" />
     </section>
     <main>
       <section id="peliculas">
-        <h1>Recién Agregadas</h1>
+        <div id="filtros">
+          <button id="btn-todos" class="filtro-btn activo" onclick="filtrar('todos')">Todos</button>
+          <button id="btn-recien" class="filtro-btn" onclick="filtrar('recien')">Recién Agregadas</button>
+          <button id="btn-mas-vistas" class="filtro-btn" onclick="filtrar('mas-vistas')">Películas más vistas</button>
+          <button id="btn-series" class="filtro-btn" onclick="filtrar('series')">Series recomendadas</button>
+        </div>
 
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/zootopia2.webp"
-              alt="Zootopia 2"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/lordofwar.jpg"
-              alt="Lord of War"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/matrix.jpg"
-              alt="Matrix"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/outlander.webp"
-              alt="Outlander"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasRecienAgregados/elresplandor.jpg"
-              alt="El Resplandor"
-              class="pelicula"
-            />
+        <div id="recien" class="seccion">
+          <h1>Recién Agregadas</h1>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasRecienAgregados/zootopia2.webp"
+                alt="Zootopia 2"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasRecienAgregados/lordofwar.jpg"
+                alt="Lord of War"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasRecienAgregados/matrix.jpg"
+                alt="Matrix"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasRecienAgregados/outlander.webp"
+                alt="Outlander"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasRecienAgregados/elresplandor.jpg"
+                alt="El Resplandor"
+                class="pelicula"
+              />
+            </div>
           </div>
         </div>
 
-        <h2>Películas más vistas</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/lapruebadelcrimen.jpg"
-              alt="La Prueba del Crimen"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasComedia/soncomoniños.jpg"
-              alt="Son Como Niños"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/busquedaimplacable3.webp"
-              alt="Búsqueda Implacable 3"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasCrimen/crimenperfecto.webp"
-              alt="Crimen Perfecto"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/peliculasAccion/eltransportador.webp"
-              alt="El Transportador"
-              class="pelicula"
-            />
+        <div id="mas-vistas" class="seccion">
+          <h2>Películas más vistas</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasCrimen/lapruebadelcrimen.jpg"
+                alt="La Prueba del Crimen"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasComedia/soncomoniños.jpg"
+                alt="Son Como Niños"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasAccion/busquedaimplacable3.webp"
+                alt="Búsqueda Implacable 3"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasCrimen/crimenperfecto.webp"
+                alt="Crimen Perfecto"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/peliculasAccion/eltransportador.webp"
+                alt="El Transportador"
+                class="pelicula"
+              />
+            </div>
           </div>
         </div>
 
-        <h2>Series recomendadas</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/peakyblinders.jpg"
-              alt="Peaky Blinders"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/breakingbad.jpg"
-              alt="Breaking Bad"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesAnimadas/lossimpsons.webp"
-              alt="Los Simpsons"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesSuspenso/dexter.jpg"
-              alt="Dexter"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesComediaRomance/unlugarparasoñar.jpg"
-              alt="Un Lugar Para Soñar"
-              class="pelicula"
-            />
+        <div id="series" class="seccion">
+          <h2>Series recomendadas</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/seriesRecienAgregadas/peakyblinders.jpg"
+                alt="Peaky Blinders"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/seriesRecienAgregadas/breakingbad.jpg"
+                alt="Breaking Bad"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/seriesAnimadas/lossimpsons.webp"
+                alt="Los Simpsons"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/seriesSuspenso/dexter.jpg"
+                alt="Dexter"
+                class="pelicula"
+              />
+            </div>
+            <div class="pelicula-conteiner">
+              <img
+                src="./public/seriesComediaRomance/unlugarparasoñar.jpg"
+                alt="Un Lugar Para Soñar"
+                class="pelicula"
+              />
+            </div>
           </div>
         </div>
       </section>
     </main>
+
+    <script>
+      function filtrar(id) {
+        document.getElementById('recien').style.display = 'none';
+        document.getElementById('mas-vistas').style.display = 'none';
+        document.getElementById('series').style.display = 'none';
+
+        if (id === 'todos') {
+          document.getElementById('recien').style.display = 'block';
+          document.getElementById('mas-vistas').style.display = 'block';
+          document.getElementById('series').style.display = 'block';
+        } else {
+          document.getElementById(id).style.display = 'block';
+        }
+
+        document.getElementById('btn-todos').classList.remove('activo');
+        document.getElementById('btn-recien').classList.remove('activo');
+        document.getElementById('btn-mas-vistas').classList.remove('activo');
+        document.getElementById('btn-series').classList.remove('activo');
+        document.getElementById('btn-' + id).classList.add('activo');
+      }
+    </script>
     <footer>
-      <img src="/public/logo.png" height="40px;" class="logo" />
+      <img src="./public/logo.png" height="40px;" class="logo" />
       <hr />
       <p>&copy; 2026 MoviePage. Todos los derechos reservados.</p>
     </footer>

@@ -4,8 +4,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="paginapeliculas.css" />
-    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link rel="stylesheet" href="./paginapeliculas.css" />
+    <link rel="icon" type="image/png" href="./public/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
@@ -15,27 +15,27 @@
 
   <body>
     <header>
-      <img src="/public/logo.png" height="40px;" class="logo" />
+      <img src="./public/logo.png" height="40px;" class="logo" />
 
       <nav>
         <ul id="menu">
           <li>
-            <a href="/index.html">INICIO</a>
+            <a href="./index.html">INICIO</a>
           </li>
           <li>
-            <a href="/paginapeliculas.html">PELÍCULAS</a>
+            <a href="./paginapeliculas.html">PELÍCULAS</a>
           </li>
           <li>
-            <a href="/paginaseries.html">SERIES</a>
+            <a href="./paginaseries.html">SERIES</a>
           </li>
           <li>
-            <a href="/reseñas.html">RESEÑAS</a>
+            <a href="./reseñas.html">RESEÑAS</a>
           </li>
         </ul>
       </nav>
 
-      <a class="circulo" href="/cuenta.html">
-        <img src="/public/account.svg" alt="" height="25px" />
+      <a class="circulo" href="./cuenta.html">
+        <img src="./public/account.svg" alt="" height="25px" />
       </a>
     </header>
 
@@ -44,169 +44,125 @@
         <h1>Series</h1>
       </div>
       <section id="peliculas">
-        <h2>Recién Agregadas</h2>
+        <div id="filtros">
+          <button id="btn-todos" class="filtro-btn activo" onclick="filtrar('todos')">Todos</button>
+          <button id="btn-recien" class="filtro-btn" onclick="filtrar('recien')">Recién Agregadas</button>
+          <button id="btn-suspenso" class="filtro-btn" onclick="filtrar('suspenso')">Suspenso</button>
+          <button id="btn-comedia-romance" class="filtro-btn" onclick="filtrar('comedia-romance')">Comedias Románticas</button>
+          <button id="btn-animadas" class="filtro-btn" onclick="filtrar('animadas')">Animadas</button>
+        </div>
 
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/americanhorrorstory.jpg"
-              alt="American Horror Story"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/elmandalorian.webp"
-              alt="El Mandalorian"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/peakyblinders.jpg"
-              alt="Peaky Blinders"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/breakingbad.jpg"
-              alt="Breaking Bad"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesRecienAgregadas/thewalkingdead.webp"
-              alt="The Walking Dead"
-              class="pelicula"
-            />
+        <div id="recien" class="seccion">
+          <h2>Recién Agregadas</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesRecienAgregadas/americanhorrorstory.jpg" alt="American Horror Story" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesRecienAgregadas/elmandalorian.webp" alt="El Mandalorian" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesRecienAgregadas/peakyblinders.jpg" alt="Peaky Blinders" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesRecienAgregadas/breakingbad.jpg" alt="Breaking Bad" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesRecienAgregadas/thewalkingdead.webp" alt="The Walking Dead" class="pelicula" />
+            </div>
           </div>
         </div>
 
-        <h2>Suspenso</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesSuspenso/dexter.jpg"
-              alt="Dexter"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesSuspenso/ecos.jpg"
-              alt="Ecos"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesSuspenso/houseofcards.jpg"
-              alt="House of Cards"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesSuspenso/tlou.jpg"
-              alt="The Last of Us"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesSuspenso/hannibal.avif"
-              alt="Hannibal"
-              class="pelicula"
-            />
+        <div id="suspenso" class="seccion">
+          <h2>Suspenso</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesSuspenso/dexter.jpg" alt="Dexter" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesSuspenso/ecos.jpg" alt="Ecos" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesSuspenso/houseofcards.jpg" alt="House of Cards" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesSuspenso/tlou.jpg" alt="The Last of Us" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesSuspenso/hannibal.avif" alt="Hannibal" class="pelicula" />
+            </div>
           </div>
         </div>
 
-        <h2>Comedias Románticas</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesComediaRomance/conquistandoamisuegro.webp"
-              alt="Conquistando a Mi Suegro"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesComediaRomance/guerradenovias.webp"
-              alt="Guerra de Novias"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesComediaRomance/lafuentedelamor.webp"
-              alt="La Fuente del Amor"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesComediaRomance/mecaseconunboludo.webp"
-              alt="Me Case Con Un Boludo"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesComediaRomance/unlugarparasoñar.jpg"
-              alt="Un Lugar Para Soñar"
-              class="pelicula"
-            />
+        <div id="comedia-romance" class="seccion">
+          <h2>Comedias Románticas</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesComediaRomance/conquistandoamisuegro.webp" alt="Conquistando a Mi Suegro" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesComediaRomance/guerradenovias.webp" alt="Guerra de Novias" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesComediaRomance/lafuentedelamor.webp" alt="La Fuente del Amor" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesComediaRomance/mecaseconunboludo.webp" alt="Me Case Con Un Boludo" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesComediaRomance/unlugarparasoñar.jpg" alt="Un Lugar Para Soñar" class="pelicula" />
+            </div>
           </div>
         </div>
 
-        <h2>Animadas</h2>
-
-        <div class="fila-peliculas">
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesAnimadas/lossimpsons.webp"
-              alt="Los Simpsons"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesAnimadas/familyguy.webp"
-              alt="Family Guy"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesAnimadas/gravityfalls.webp"
-              alt="Gravity Falls"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesAnimadas/naruto.webp"
-              alt="Naruto"
-              class="pelicula"
-            />
-          </div>
-          <div class="pelicula-conteiner">
-            <img
-              src="/public/seriesAnimadas/bluey.webp"
-              alt="El Transportador"
-              class="pelicula"
-            />
+        <div id="animadas" class="seccion">
+          <h2>Animadas</h2>
+          <div class="fila-peliculas">
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesAnimadas/lossimpsons.webp" alt="Los Simpsons" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesAnimadas/familyguy.webp" alt="Family Guy" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesAnimadas/gravityfalls.webp" alt="Gravity Falls" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesAnimadas/naruto.webp" alt="Naruto" class="pelicula" />
+            </div>
+            <div class="pelicula-conteiner">
+              <img src="./public/seriesAnimadas/bluey.webp" alt="Bluey" class="pelicula" />
+            </div>
           </div>
         </div>
       </section>
     </main>
+    <script>
+      function filtrar(id) {
+        document.getElementById('recien').style.display = 'none';
+        document.getElementById('suspenso').style.display = 'none';
+        document.getElementById('comedia-romance').style.display = 'none';
+        document.getElementById('animadas').style.display = 'none';
+
+        if (id === 'todos') {
+          document.getElementById('recien').style.display = 'block';
+          document.getElementById('suspenso').style.display = 'block';
+          document.getElementById('comedia-romance').style.display = 'block';
+          document.getElementById('animadas').style.display = 'block';
+        } else {
+          document.getElementById(id).style.display = 'block';
+        }
+
+        document.getElementById('btn-todos').classList.remove('activo');
+        document.getElementById('btn-recien').classList.remove('activo');
+        document.getElementById('btn-suspenso').classList.remove('activo');
+        document.getElementById('btn-comedia-romance').classList.remove('activo');
+        document.getElementById('btn-animadas').classList.remove('activo');
+        document.getElementById('btn-' + id).classList.add('activo');
+      }
+    </script>
     <footer>
-      <img src="/public/logo.png" height="40px;" class="logo" />
+      <img src="./public/logo.png" height="40px;" class="logo" />
       <hr />
       <p>&copy; 2026 MoviePage. Todos los derechos reservados.</p>
     </footer>

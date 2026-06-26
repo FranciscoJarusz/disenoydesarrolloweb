@@ -98,6 +98,36 @@ main {
   margin-top: 30px;
 }
 
+#filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filtro-btn {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #555;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.filtro-btn.activo {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  font-weight: 700;
+}
+
 #peliculas h1 {
   color: #fafafa;
   font-size: 30px;
