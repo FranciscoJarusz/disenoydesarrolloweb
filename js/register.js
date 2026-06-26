@@ -29,4 +29,7 @@ form.addEventListener("submit", function (e) {
     alert("Las contraseñas no coinciden");
     return;
   }
+
+  alert("¡Registrado correctamente!");
+  window.location.href = "./index.html";
 });
