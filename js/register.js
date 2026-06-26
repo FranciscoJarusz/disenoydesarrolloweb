@@ -1,35 +1,32 @@
-const form = document.querySelector(".form-register");
+$(function () {
+  $('.form-register').on('submit', function (e) {
+    e.preventDefault();
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+    $('.error-msg').hide();
 
-  const nombre = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const confirmPassword = document
-    .getElementById("confirm-password")
-    .value.trim();
+    var nombre = $('#name').val().trim();
+    var email = $('#email').val().trim();
+    var password = $('#password').val().trim();
+    var confirmPassword = $('#confirm-password').val().trim();
 
-  if (nombre.length < 3) {
-    alert("El nombre debe tener al menos 2 caracteres");
-    return;
-  }
+    if (nombre.length < 3) {
+      $('#error-name').text('El nombre debe tener al menos 2 caracteres.').hide().slideDown(300);
+      return;
+    }
 
-  if (email.length < 3) {
-    alert("El email debe tener al menos 3 caracteres");
-    return;
-  }
+    if (email.length < 3) {
+      $('#error-email').text('El email debe tener al menos 3 caracteres.').hide().slideDown(300);
+      return;
+    }
 
-  if (password.length < 8) {
-    alert("La contraseña debe tener al menos 8 caracteres");
-    return;
-  }
+    if (password.length < 8) {
+      $('#error-password').text('La contraseña debe tener al menos 8 caracteres.').hide().slideDown(300);
+      return;
+    }
 
-  if (password !== confirmPassword) {
-    alert("Las contraseñas no coinciden");
-    return;
-  }
-
-  alert("¡Registrado correctamente!");
-  window.location.href = "./index.html";
+    if (password !== confirmPassword) {
+      $('#error-confirm-password').text('Las contraseñas no coinciden.').hide().slideDown(300);
+      return;
+    }
+  });
 });

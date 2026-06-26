@@ -1,11 +1,17 @@
-function ingresar() {
-  var usuario = document.getElementById("username").value;
-  var contrasena = document.getElementById("password").value;
+$(function () {
+  $('#btn-ingresar').on('click', function () {
+    var usuario = $('#username').val();
+    var contrasena = $('#password').val();
 
-  if (usuario == "prueba" && contrasena == "1234") {
-    window.location.href = "./index.html";
-  } else {
-    alert("Usuario o contraseña incorrectos");
-    alert("(Solo a motivo de prueba dejamos un usario valido con usuario: \"prueba\" y contraseña: \"1234\")");
-  }
-}
+    $('#login-error').hide();
+
+    if (usuario === 'prueba' && contrasena === '1234') {
+      window.location.href = './index.html';
+    } else {
+      $('#login-error')
+        .text('Usuario o contraseña incorrectos. (Credenciales de prueba: usuario "prueba", contraseña "1234")')
+        .hide()
+        .slideDown(300);
+    }
+  });
+});

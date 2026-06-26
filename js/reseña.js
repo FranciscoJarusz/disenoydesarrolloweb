@@ -1,105 +1,76 @@
-const peliculas = [
-  {
-    titulo: "Lord of War",
-    imagen: "./public/peliculasRecienAgregados/lordofwar.jpg",
-  },
-  { titulo: "Matrix", imagen: "./public/peliculasRecienAgregados/matrix.jpg" },
-  {
-    titulo: "Outlander",
-    imagen: "./public/peliculasRecienAgregados/outlander.webp",
-  },
-  {
-    titulo: "El Resplandor",
-    imagen: "./public/peliculasRecienAgregados/elresplandor.jpg",
-  },
-  {
-    titulo: "Zootopia 2",
-    imagen: "./public/peliculasRecienAgregados/zootopia2.webp",
-  },
-  {
-    titulo: "Crimen Perfecto",
-    imagen: "./public/peliculasCrimen/crimenperfecto.webp",
-  },
-  {
-    titulo: "Ecos de un Crimen",
-    imagen: "./public/peliculasCrimen/ecosdeuncrimen.jpg",
-  },
-  {
-    titulo: "La Prueba del Crimen",
-    imagen: "./public/peliculasCrimen/lapruebadelcrimen.jpg",
-  },
-  {
-    titulo: "Nueve Reinas",
-    imagen: "./public/peliculasCrimen/nuevereinas.webp",
-  },
-  {
-    titulo: "Ruta de Escape",
-    imagen: "./public/peliculasCrimen/rutadeescape.webp",
-  },
-  { titulo: "La Máscara", imagen: "./public/peliculasComedia/lamascara.jpg" },
-  {
-    titulo: "Padre No Hay Más Que Uno",
-    imagen: "./public/peliculasComedia/padrenohaymasqueuno.jpg",
-  },
-  {
-    titulo: "Qué Pasó Ayer",
-    imagen: "./public/peliculasComedia/quepasoayer.jpg",
-  },
-  {
-    titulo: "Somos los Miller",
-    imagen: "./public/peliculasComedia/somoslosmiller.jpg",
-  },
-  {
-    titulo: "Son Como Niños",
-    imagen: "./public/peliculasComedia/soncomoniños.jpg",
-  },
-  { titulo: "Kingsman", imagen: "./public/peliculasAccion/kingsman.webp" },
-  {
-    titulo: "Duro de Matar 4.0",
-    imagen: "./public/peliculasAccion/durodematar4.0.webp",
-  },
-  {
-    titulo: "Búsqueda Implacable 3",
-    imagen: "./public/peliculasAccion/busquedaimplacable3.webp",
-  },
-  {
-    titulo: "El Transportador",
-    imagen: "./public/peliculasAccion/eltransportador.webp",
-  },
-];
+$(function () {
+  var APIKEY = '67ae630c';
+  var debounceTimer;
 
-const form = document.querySelector(".form-reseñas");
+  $('#titulo').on('input', function () {
+    clearTimeout(debounceTimer);
+    var query = $(this).val().trim();
+    $('#titulo-dropdown').empty().hide();
+    $('#titulo-error').hide();
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+    if (query.length < 2) return;
 
-  const usuario = form.usuario.value.trim();
-  const titulo = form.titulo.value.trim();
-  const reseña = form.reseña.value.trim();
+    debounceTimer = setTimeout(function () {
+      $.get('https://www.omdbapi.com/', { apikey: APIKEY, s: query }, function (data) {
+        if (data.Response === 'True' && data.Search) {
+          var $dropdown = $('#titulo-dropdown').empty();
+          $.each(data.Search.slice(0, 6), function (i, item) {
+            $('<div class="dropdown-item"></div>')
+              .text(item.Title + ' (' + item.Year + ')')
+              .on('click', function () {
+                $('#titulo').val(item.Title);
+                $dropdown.empty().hide();
+              })
+              .appendTo($dropdown);
+          });
+          $dropdown.show();
+        }
+      });
+    }, 300);
+  });
 
-  let pelicula = null;
-  for (let i = 0; i < peliculas.length; i++) {
-    if (peliculas[i].titulo.toLowerCase() === titulo.toLowerCase()) {
-      pelicula = peliculas[i];
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.titulo-wrapper').length) {
+      $('#titulo-dropdown').hide();
     }
-  }
+  });
 
-  if (pelicula === null) {
-    alert("El título no corresponde a una película disponible en el sitio.");
-    return;
-  }
+  $('.form-reseñas').on('submit', function (e) {
+    e.preventDefault();
 
-  const div = document.createElement("div");
-  div.classList.add("reseña-publicada");
+    var usuario = $('#usuario').val().trim();
+    var titulo = $('#titulo').val().trim();
+    var reseña = $('#reseña').val().trim();
 
-  div.innerHTML = `
-    <img src="${pelicula.imagen}"/>
-    <div>
-      <h2>${pelicula.titulo}</h2>
-      <span class="usuario">@${usuario}</span>
-      <p>${reseña}</p>
-    </div>
-  `;
+    $('#titulo-error').hide();
 
-  document.getElementById("contenedor-reseñas").appendChild(div);
+    $.get('https://www.omdbapi.com/', { apikey: APIKEY, t: titulo }, function (data) {
+      var poster;
+      if (data.Response === 'True' && data.Poster && data.Poster !== 'N/A') {
+        poster = data.Poster;
+      } else {
+        poster = 'https://placehold.co/100x150?text=Sin+imagen';
+        $('#titulo-error')
+          .text('No se encontró el póster para ese título.')
+          .hide()
+          .fadeIn(300);
+      }
+
+      var $card = $('<div class="reseña-publicada"></div>');
+      var $img = $('<img>').attr('src', poster).attr('alt', titulo);
+      var $info = $('<div></div>');
+      $info.append(
+        $('<h2></h2>').text(titulo),
+        $('<span class="usuario"></span>').text('@' + usuario),
+        $('<p></p>').text(reseña)
+      );
+      $card.append($img, $info);
+      $('#contenedor-reseñas').append($card);
+    }).fail(function () {
+      $('#titulo-error')
+        .text('Error al conectar con OMDb. Verificá tu conexión a internet.')
+        .hide()
+        .fadeIn(300);
+    });
+  });
 });

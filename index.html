@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./global.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="icon" type="image/png" href="./public/favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -182,23 +183,16 @@
 
     <script>
       function filtrar(id) {
-        document.getElementById('recien').style.display = 'none';
-        document.getElementById('mas-vistas').style.display = 'none';
-        document.getElementById('series').style.display = 'none';
+        $('.filtro-btn').removeClass('activo');
+        $('#btn-' + id).addClass('activo');
 
         if (id === 'todos') {
-          document.getElementById('recien').style.display = 'block';
-          document.getElementById('mas-vistas').style.display = 'block';
-          document.getElementById('series').style.display = 'block';
+          $('.seccion:hidden').stop(true).fadeIn(400);
         } else {
-          document.getElementById(id).style.display = 'block';
+          var $target = $('#' + id);
+          $('.seccion').not($target).stop(true).fadeOut(200);
+          $target.stop(true).fadeIn(400);
         }
-
-        document.getElementById('btn-todos').classList.remove('activo');
-        document.getElementById('btn-recien').classList.remove('activo');
-        document.getElementById('btn-mas-vistas').classList.remove('activo');
-        document.getElementById('btn-series').classList.remove('activo');
-        document.getElementById('btn-' + id).classList.add('activo');
       }
     </script>
     <footer>
