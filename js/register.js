@@ -11,7 +11,7 @@ form.addEventListener("submit", function (e) {
     .value.trim();
 
   if (nombre.length < 3) {
-    alert("El nombre debe tener al menos 3 caracteres");
+    alert("El nombre debe tener al menos 2 caracteres");
     return;
   }
 
