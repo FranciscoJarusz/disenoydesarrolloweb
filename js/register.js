@@ -14,8 +14,8 @@ $(function () {
       return;
     }
 
-    if (email.length < 3) {
-      $('#error-email').text('El email debe tener al menos 3 caracteres.').hide().slideDown(300);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      $('#error-email').text('El email no tiene un formato válido.').hide().slideDown(300);
       return;
     }
 
@@ -28,5 +28,8 @@ $(function () {
       $('#error-confirm-password').text('Las contraseñas no coinciden.').hide().slideDown(300);
       return;
     }
+
+    alert('¡Bienvenido, ' + nombre + '!');
+    window.location.href = 'index.html';
   });
 });
