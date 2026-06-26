@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>MoviePage - Películas, series y reseñas</title>
   </head>
 
@@ -56,12 +57,16 @@
 
         <div class="form-group">
           <label for="titulo">Título de la película:</label>
-          <input
-            name="titulo"
-            id="titulo"
-            placeholder="Escribe el nombre de la película..."
-            required
-          />
+          <div class="titulo-wrapper">
+            <input
+              name="titulo"
+              id="titulo"
+              placeholder="Escribe el nombre de la película..."
+              required
+            />
+            <div id="titulo-dropdown" class="titulo-dropdown"></div>
+          </div>
+          <p id="titulo-error" class="error-msg"></p>
         </div>
 
         <div class="form-group">
@@ -117,7 +122,6 @@
       <hr />
       <p>&copy; 2026 MoviePage. Todos los derechos reservados.</p>
     </footer>
+    <script src="./js/reseña.js"></script>
   </body>
 </html>
-
-<script src="./js/reseña.js"></script>

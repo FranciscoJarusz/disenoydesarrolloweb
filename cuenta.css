@@ -191,3 +191,10 @@ footer p {
   color: #fafafa;
   font-size: 14px;
 }
+
+.error-msg {
+  color: #e05c5c;
+  font-size: 13px;
+  margin: 4px 0 0 4px;
+  display: none;
+}

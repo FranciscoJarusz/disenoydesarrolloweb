@@ -219,3 +219,45 @@ footer p {
   color: #fafafa;
   font-size: 14px;
 }
+
+.titulo-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.titulo-wrapper input {
+  width: 100%;
+}
+
+.titulo-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #161a1b;
+  border: 1px solid #fafafa59;
+  border-radius: 12px;
+  z-index: 100;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  padding: 10px 14px;
+  color: #fafafa;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #232728;
+}
+
+.error-msg {
+  color: #e05c5c;
+  font-size: 13px;
+  margin: 4px 0 0 12px;
+  display: none;
+}
